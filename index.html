@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automóvil Club de Chile - Acreditación</title>
+    <title>INACEX - Acreditación Centro de Entrenamiento Minero</title>
     <style>
         :root {
-            --yellow-header: #ffd100;
-            --beige-bg: #f5f4e6;
+            --inacex-green: #b4c82b; /* Color verde lima de INACEX */
+            --bg-light: #f7f9f0;
             --text-dark: #333333;
             --text-medium: #4a4a4a;
             --text-light: #555555;
@@ -34,30 +34,48 @@
 
         /* --- HEADER --- */
         .header {
-            background-color: var(--yellow-header);
+            background-color: var(--inacex-green);
             padding: 12px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 12px;
         }
 
-        .header svg {
-            width: 24px;
-            height: 24px;
+        .header-logo {
+            width: 40px;
+            height: 40px;
+            background-color: var(--inacex-green);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid white;
+            border-radius: 4px;
+        }
+
+        .header-logo svg {
+            width: 28px;
+            height: 20px;
         }
 
         .header-text {
             font-weight: 800;
             font-size: 14px;
-            line-height: 1.1;
-            color: #000;
+            line-height: 1.2;
+            color: white;
             text-align: left;
+            text-transform: uppercase;
+        }
+
+        .header-subtext {
+            font-size: 10px;
+            font-weight: 600;
         }
 
         /* --- PROFILE SECTION --- */
         .profile-section {
-            background-color: var(--beige-bg);
+            background-color: var(--bg-light);
             padding: 40px 20px;
             display: flex;
             flex-direction: column;
@@ -71,7 +89,8 @@
             border-radius: 50%;
             overflow: hidden;
             margin-bottom: 20px;
-            background-color: #ccc;
+            background-color: #ddd;
+            border: 4px solid var(--inacex-green);
         }
 
         .profile-img-container img {
@@ -81,10 +100,11 @@
         }
 
         .profile-name {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 700;
             color: var(--text-dark);
             margin: 0 0 20px 0;
+            text-transform: uppercase;
         }
 
         .badge-info {
@@ -93,26 +113,28 @@
             gap: 12px;
             align-items: flex-start;
             width: 100%;
-            max-width: 280px;
+            max-width: 300px;
         }
 
         .info-row {
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-medium);
+            text-align: left;
         }
 
         .icon-circle {
-            background-color: #888;
+            background-color: var(--inacex-green);
             color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 6px; /* Slightly rounded square like the image */
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-shrink: 0;
         }
 
         .icon-circle svg {
@@ -129,12 +151,14 @@
 
         .section-title {
             font-size: 15px;
-            color: var(--text-light);
+            font-weight: 700;
+            color: var(--inacex-green);
             margin-bottom: 12px;
+            text-transform: uppercase;
         }
 
         .divider {
-            height: 1px;
+            height: 2px;
             background-color: var(--border-color);
             margin-bottom: 20px;
             border: none;
@@ -150,7 +174,7 @@
         .data-item {
             display: grid;
             grid-template-columns: 120px 1fr;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .data-label {
@@ -160,6 +184,7 @@
 
         .data-value {
             color: var(--text-medium);
+            line-height: 1.4;
         }
 
     </style>
@@ -170,50 +195,46 @@
     
     <!-- Top Header -->
     <div class="header">
-        <!-- SVG Gear/Wheel Logo Approx -->
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill: black; stroke: black;">
-            <circle cx="12" cy="12" r="10"></circle>
-            <circle cx="12" cy="12" r="3" fill="var(--yellow-header)"></circle>
-            <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.07-7.07l-1.41 1.41M6.34 17.66l-1.41 1.41m12.73 0l-1.41-1.41M6.34 6.34L4.93 4.93"></path>
-        </svg>
+        <!-- Recreación visual del Logo INACEX -->
+        <div class="header-logo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 20L12 4L20 20" fill="white" stroke="none"></path>
+                <path d="M12 20L16 12L20 20" fill="var(--inacex-green)" stroke="none"></path>
+            </svg>
+        </div>
         <div class="header-text">
-            Automóvil Club<br>de Chile
+            INACEX<br>
+            <span class="header-subtext">Centro de Entrenamiento Minero</span>
         </div>
     </div>
 
     <!-- Profile Section -->
     <div class="profile-section">
         <div class="profile-img-container">
-            <!-- HE CAMBIADO LA URL POR 'claudio.png' AQUÍ -->
-            <img src="claudio.png" alt="Claudio Felipe Parra Pulgar">
+            <!-- Espacio para foto del alumno -->
+            <img src="foto_alfonso.png" alt="Alfonso Domingo Marín Campos" onerror="this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23cccccc%22%3E%3Cpath d=%22M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z%22/%3E%3C/svg%3E';">
         </div>
-        <h1 class="profile-name">Claudio Felipe Parra Pulgar</h1>
+        <h1 class="profile-name">Alfonso Domingo<br>Marín Campos</h1>
         
         <div class="badge-info">
             <div class="info-row">
                 <div class="icon-circle">
-                    <!-- Icono de tarjeta/documento -->
                     <svg viewBox="0 0 24 24">
-                        <rect x="4" y="4" width="16" height="16" rx="2" ry="2" fill="none" stroke="white" stroke-width="2"></rect>
-                        <line x1="4" y1="10" x2="20" y2="10" stroke="white" stroke-width="2"></line>
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="white" stroke-width="2" fill="none"></path>
                     </svg>
                 </div>
-                Examen Carga Peligrosa
+                Operador de Maquinaria Múltiple
             </div>
             <div class="info-row">
                 <div class="icon-circle">
-                    <!-- Icono de calendario -->
                     <svg viewBox="0 0 24 24">
                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="white" stroke-width="2"></rect>
                         <line x1="16" y1="2" x2="16" y2="6" stroke="white" stroke-width="2"></line>
                         <line x1="8" y1="2" x2="8" y2="6" stroke="white" stroke-width="2"></line>
                         <line x1="3" y1="10" x2="21" y2="10" stroke="white" stroke-width="2"></line>
-                        <rect x="7" y="14" width="2" height="2" fill="white"></rect>
-                        <rect x="11" y="14" width="2" height="2" fill="white"></rect>
-                        <rect x="15" y="14" width="2" height="2" fill="white"></rect>
                     </svg>
                 </div>
-                11 Junio, 2026
+                Arica, Agosto de 2023
             </div>
         </div>
     </div>
@@ -226,33 +247,51 @@
         <div class="data-grid">
             <div class="data-item">
                 <div class="data-label">Nombre:</div>
-                <div class="data-value">Claudio Felipe Parra Pulgar</div>
+                <div class="data-value">Alfonso Domingo Marín Campos</div>
             </div>
             <div class="data-item">
                 <div class="data-label">RUT:</div>
-                <div class="data-value">15.232.147-3</div>
+                <div class="data-value">11.345.997-2</div>
             </div>
         </div>
 
-        <!-- Datos Acreditación -->
-        <div class="section-title">Datos Acreditación</div>
+        <!-- Datos Capacitación -->
+        <div class="section-title">Datos del Programa</div>
         <hr class="divider">
         <div class="data-grid">
             <div class="data-item">
-                <div class="data-label">Tipo:</div>
-                <div class="data-value">Examen Carga Peligrosa</div>
+                <div class="data-label">Programa:</div>
+                <div class="data-value">Operador de Maquinaria Múltiple</div>
             </div>
             <div class="data-item">
-                <div class="data-label">Fecha:</div>
-                <div class="data-value">11 Junio, 2026</div>
+                <div class="data-label">Especialidad:</div>
+                <div class="data-value">Grúa Horquilla - Retroexcavadora<br>Prevención de Riesgos y Minicargador</div>
             </div>
             <div class="data-item">
-                <div class="data-label">Valido hasta:</div>
-                <div class="data-value">11 Junio, 2027</div>
+                <div class="data-label">Duración:</div>
+                <div class="data-value">4 Meses</div>
             </div>
             <div class="data-item">
-                <div class="data-label">Sede:</div>
-                <div class="data-value">Sede La Serena</div>
+                <div class="data-label">Sede / Fecha:</div>
+                <div class="data-value">Arica, Agosto de 2023</div>
+            </div>
+        </div>
+        
+        <!-- Datos OTEC -->
+        <div class="section-title">Certificación OTEC</div>
+        <hr class="divider">
+        <div class="data-grid">
+            <div class="data-item">
+                <div class="data-label">Institución:</div>
+                <div class="data-value">INACEX - OTEC (RUT 76.024.793-6)</div>
+            </div>
+            <div class="data-item">
+                <div class="data-label">Norma:</div>
+                <div class="data-value">NCH 2728 OF 2015</div>
+            </div>
+            <div class="data-item">
+                <div class="data-label">Reg Sence N°:</div>
+                <div class="data-value">42464</div>
             </div>
         </div>
     </div>
@@ -261,3 +300,4 @@
 
 </body>
 </html>
+
